@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:todo_app/widgets/search_box.dart';
 
+import '../widgets/todo_item.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({
     Key? key,
@@ -30,23 +32,41 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          SearchBox(),
-          ListView(
-            children: [
-              Container(
-                child: Text(
-                  "All ToDo list",
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        fontWeight: FontWeight.w300, fontSize: 35),
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        child: Column(
+          children: [
+            Expanded(flex: 1, child: Container(child: SearchBox())),
+            Expanded(
+              flex: 9,
+              child: ListView(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 50, bottom: 20),
+                    child: Text(
+                      "All ToDos",
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 35,
+                          color: Color(0xFF4361ee),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                  TodoItem(),
+                ],
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

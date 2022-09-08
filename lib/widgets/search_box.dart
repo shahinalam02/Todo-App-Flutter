@@ -14,7 +14,7 @@ class SearchBox extends StatelessWidget {
       height: 50,
       width: 360,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
       child: TextField(
